@@ -73,12 +73,15 @@ const resetAll = () => {
   d6Mean.innerText = "NA";
   d6Median.innerText = "NA";
   d6Mode.innerText = "NA";
+
   doubleD6Mean.innerText = "NA";
   doubleD6Median.innerText = "NA";
   doubleD6Mode.innerText = "NA";
+
   d12Mean.innerText = "NA";
   d12Median.innerText = "NA";
   d12Mode.innerText = "NA";
+  
   d20Mean.innerText = "NA";
   d20Median.innerText = "NA";
   d20Mode.innerText = "NA";

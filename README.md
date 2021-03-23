@@ -4,7 +4,7 @@
 
 Today you'll be making an app that combines all the fun of rolling dice with all the fun of tracking the average rolls so far. These are equal funs.
 
-[The solution is hosted here](http://just-how-we-roll-solution-2.surge.sh).
+[The solution is hosted here](http://just-h ow-we-roll-solution-2.surge.sh).
 
 
 ### Tools Left Behind

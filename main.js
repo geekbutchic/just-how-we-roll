@@ -94,13 +94,13 @@ const getImagePathNumbers = (roll) => {
   return `./images/numbers/${roll}.png`;
 };
 
-const setText = (selector, text) => {
-  document.querySelector(selector).innerText = text;
-};
+// const setText = (selector, text) => {
+//   document.querySelector(selector).innerText = text;
+// };
 
-const setSrc = (selector, src) => {
-  document.querySelector(selector).src = src;
-};
+// const setSrc = (selector, src) => {
+//   document.querySelector(selector).src = src;
+// };
 
 const rollD6 = () => {
   const roll = getRandomNumber(6);

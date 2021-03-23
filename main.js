@@ -201,5 +201,33 @@ const getMode = (rolls) => {
   return mode;
 };
 
+// Alternative getMode function
+
+
+// const getMode = (rolls) => {
+//   const sorted = sortByNumber(rolls);
+
+//   let mode = 0;
+//   let modeFreq = 0;
+
+//   let currentNum = 0;
+//   let currentFreq = 0;
+
+//   for (const number of sorted) {
+//     if (number === currentNum) {
+//       currentFreq++
+//     } else {
+//       currentNum = number;
+//       currentFreq = 1;
+//     }
+//     if (currentFreq > modeFreq) {
+//       mode = currentNum;
+//       modeFreq = currentFreq;
+//     }
+//   }
+//   return mode;
+// }
+
+
 
 resetAll();

@@ -81,7 +81,7 @@ const resetAll = () => {
   d12Mean.innerText = "NA";
   d12Median.innerText = "NA";
   d12Mode.innerText = "NA";
-  
+
   d20Mean.innerText = "NA";
   d20Median.innerText = "NA";
   d20Mode.innerText = "NA";
@@ -176,7 +176,7 @@ const getMean = (rolls) => {
 const getMedian = (rolls) => {
   const sorted = sortByNumber(rolls);
   const midPoint = Math.floor(sorted.length / 2);
-  // if 2 mediums add both divide by together
+  // take 2 values add both divide by together
   if (sorted.length % 2 === 0) {
     return sorted[midPoint] + sorted[midPoint - 1];
   } else {

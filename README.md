@@ -4,7 +4,7 @@
 
 Today you'll be making an app that combines all the fun of rolling dice with all the fun of tracking the average rolls so far. These are equal funs.
 
-[The solution is hosted here](http://just-h ow-we-roll-solution-2.surge.sh).
+[The solution is hosted here](https://ci-wdi-900.github.io/just-how-we-roll/).
 
 
 ### Tools Left Behind
@@ -13,16 +13,12 @@ There's been some code left behind in this other-wise gutted app: a random numbe
 
 And feel free to use the comment boxes to organize your sections. (Or don't.)
 
-If you want to add more comment boxes, check out [the Comment Box extension](https://marketplace.visualstudio.com/items?itemName=slysherz.comment-box). It's neat!
-
-
 ### Tools We'll Be Practicing With
 
 * event listeners
 * string building/interpolation
 * array management and iteration
 * maths
-
 
 ### Setting Up
 

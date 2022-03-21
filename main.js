@@ -11,6 +11,7 @@ const twenties = [];
  * HELPER FUNCTIONS *
  ********************/
 
+//PROVIDED FOR US
 const getRandomNumber = function (max) {
   const rand = Math.random();
   const range = rand * max;
@@ -19,17 +20,18 @@ const getRandomNumber = function (max) {
   return result;
 };
 
+//SORTS ARRAY FROM LEAST TO GREATEST 
 const sortByNumber = function (arr) {
   const byNumber = function (item1, item2) {
     return item1 - item2;
   };
-
   return arr.slice().sort(byNumber);
 };
 
 /*******************
  * YOUR CODE BELOW *
  *******************/
+//QUERY SELECTORS
 const d6Button = document.querySelector("#d6-roll");
 const doubleD6Button1 = document.querySelector("#double-d6-roll-1");
 const doubleD6Button2 = document.querySelector("#double-d6-roll-2");
@@ -57,6 +59,7 @@ const d20Mode = document.querySelector("#d20-rolls-mode");
 /******************
  * RESET FUNCTION *
  ******************/
+//RESET ALL
 const resetAll = () => {
   // Removes all items from an array
   sixes.splice(0);
@@ -90,10 +93,12 @@ const resetAll = () => {
  * CLICK HANDLING FUNCTIONS *
  ****************************/
 const getImagePathD6 = (roll) => {
+  //RETURNS IMAGES FORM IMAGE FILE PATH 1-6
   return `./images/d6/${roll}.png`;
 };
 
 const getImagePathNumbers = (roll) => {
+  //RETURNS IMAGES FROM IMAGE FILE 1-12 OR 1-20
   return `./images/numbers/${roll}.png`;
 };
 
@@ -114,7 +119,7 @@ const rollD6 = () => {
 const rollDoubleD6 = () => {
   const roll1 = getRandomNumber(6);
   const roll2 = getRandomNumber(6);
-  // Push together for pushing into for scores
+  //PUSH TOGETHER FOR PUSHING INTO A SCORE
   doubleSixes.push(roll1 + roll2);
   const median = getMedian(doubleSixes);
   const mean = getMean(doubleSixes);
@@ -128,12 +133,13 @@ const rollDoubleD6 = () => {
 };
 
 const rollD12 = () => {
+  //VARIABLES
   const roll = getRandomNumber(12);
   twelves.push(roll);
   const median = getMedian(twelves);
   const mean = getMean(twelves);
   const mode = getMode(twelves);
-
+  //SETS IMAGE 
   d12Button.src = getImagePathNumbers(roll);
   d12Mean.innerText = mean;
   d12Median.innerText = median;
@@ -141,6 +147,7 @@ const rollD12 = () => {
 };
 
 const rollD20 = () => {
+  //SET'S UP VARIABLES TO MAKE INNER-TEXT EASIER
   const roll = getRandomNumber(20);
   twenties.push(roll);
   const median = getMedian(twenties);
@@ -153,6 +160,7 @@ const rollD20 = () => {
   d20Mode.innerText = mode;
 };
 
+//EVENT LISTENERS WITH FUNCTIONS BEING PASSED IN
 d6Button.addEventListener("click", rollD6);
 doubleD6Button1.addEventListener("click", rollDoubleD6);
 doubleD6Button2.addEventListener("click", rollDoubleD6);
@@ -163,20 +171,21 @@ resetButton.addEventListener("click", resetAll);
 /****************
  * MATH SECTION *
  ****************/
+
 const getMean = (rolls) => {
   let sum = 0;
-  // adds onto sum = total
+  //ADDS ONTO SUM = TOTAL
   for (const roll of rolls) {
     sum += roll;
   }
-  // take sum and divide by how many - shortens .2 after dot
+  //TAKE SUM AND DIVIDE
   return (sum / rolls.length).toFixed(2);
 };
 
 const getMedian = (rolls) => {
   const sorted = sortByNumber(rolls);
   const midPoint = Math.floor(sorted.length / 2);
-  // take 2 values add both divide by together
+  //TAKE 2 VALUES ADD BOTH AND DIVIDE
   if (sorted.length % 2 === 0) {
     return sorted[midPoint] + sorted[midPoint - 1];
   } else {
@@ -184,9 +193,11 @@ const getMedian = (rolls) => {
   }
 };
 
+
 const getMode = (rolls) => {
   const counts = {};
   let mode = "NA";
+  //FOR OF LOOP
   for (const roll of rolls) {
     if (roll in counts) {
       counts[roll]++;
@@ -200,34 +211,5 @@ const getMode = (rolls) => {
   }
   return mode;
 };
-
-// Alternative getMode function
-
-
-// const getMode = (rolls) => {
-//   const sorted = sortByNumber(rolls);
-
-//   let mode = 0;
-//   let modeFreq = 0;
-
-//   let currentNum = 0;
-//   let currentFreq = 0;
-
-//   for (const number of sorted) {
-//     if (number === currentNum) {
-//       currentFreq++
-//     } else {
-//       currentNum = number;
-//       currentFreq = 1;
-//     }
-//     if (currentFreq > modeFreq) {
-//       mode = currentNum;
-//       modeFreq = currentFreq;
-//     }
-//   }
-//   return mode;
-// }
-
-
 
 resetAll();
